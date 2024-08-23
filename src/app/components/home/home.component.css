@@ -1,0 +1,14 @@
+.nav-menu {
+  /* display: flex; */
+  padding: 20px;
+  margin: 20px;
+}
+.nav-list {
+  display: flex;
+  /* margin:  0; */
+  list-style: none;
+  justify-content: space-between;
+}
+.nav-items {
+    list-style: none;
+}
