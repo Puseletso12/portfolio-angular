@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-components',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './components.component.html',
-  styleUrl: './components.component.css'
+  styleUrl: './components.component.css',
 })
-export class ComponentsComponent {
+export class ComponentComponent {
 
 }

@@ -1,14 +1,31 @@
+* {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.logo {
+  padding-right: 50px;
+}
 .nav-menu {
-  /* display: flex; */
-  padding: 20px;
-  margin: 20px;
-}
-.nav-list {
+  padding: 10px;
+  margin: 15px;
   display: flex;
-  /* margin:  0; */
   list-style: none;
-  justify-content: space-between;
+  column-gap: 5rem;
+  padding-left: 350px;
 }
-.nav-items {
-    list-style: none;
+
+.nav-items:hover {
+  color: #e9031d;
+}
+.fa-3x {
+  color: hsl(0deg 0% 71.37%);
+}
+a {
+  text-decoration: none;
+}
+.home-img {
+background: url(/src/assets/profile.jpg);
+}
+.home-description {
+  max-width: 400px;
 }
