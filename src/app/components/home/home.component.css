@@ -19,13 +19,24 @@
 }
 .fa-3x {
   color: hsl(0deg 0% 71.37%);
+  font-size: 2rem;
 }
 a {
   text-decoration: none;
 }
-.home-img {
-background: url(/src/assets/profile.jpg);
+img {
+  max-width: 100%;
+  height: auto;
 }
 .home-description {
   max-width: 400px;
 }
+
+/* .home-title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-0-25);
+} */
+/* .home-description {
+  max-width: 400px;
+  margin-bottom: var(--mb-3);
+} */

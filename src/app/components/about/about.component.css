@@ -1,0 +1,12 @@
+/* * {
+    color: hsl(0, 0%, 98%);
+} */
+.about-section {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+}
+.about-description {
+    padding: 0 4rem 0 0;
+    margin-bottom: var(--mb-2-5);
+  }

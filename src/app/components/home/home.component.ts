@@ -15,6 +15,7 @@ import {
   imports: [FontAwesomeModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  
 })
 export class HomeComponent {
   faGithub = faGithub;
@@ -23,4 +24,6 @@ export class HomeComponent {
   faCss3 = faCss3;
   faJs = faJs
   faBootstrap = faBootstrap
+  imageUrl = 'src/assets/profile.jpg'
+  
 }
