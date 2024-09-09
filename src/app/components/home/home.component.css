@@ -1,40 +1,617 @@
+@font-face {
+  font-family: "FontAwesome";
 
-.logo {
-  padding-right: 50px;
+  src: url("/src/app/components/font-awesome/font-awesome.component.css")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
-.nav-menu {
-  padding: 10px;
-  margin: 15px;
-  display: flex;
-  list-style: none;
-  column-gap: 5rem;
-  padding-left: 350px;
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-items:hover {
-  color: #e9031d;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.fa-3x {
-  color: hsl(0deg 0% 71.37%);
-  font-size: 2rem;
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
 }
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+p {
+  line-height: 25px;
+}
+
+.row img {
+  height: auto;
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
+  line-height: inherit;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
-img {
-  max-width: 100%;
-  height: auto;
+
+iframe {
+  border: 0 !important;
 }
-.home-page {
-  height: 50vh;
-  border: 50px;
-  justify-content: center;
-  align-items: center;
-  background: url("/assets/profile.jpg") no-repeat center center/cover;
-  /* color: white; */
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
+figure {
+  margin: 0;
+}
+
+/* Page Border */
+
+.page-border {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+.page-border .bottom-border,
+.page-border .left-border,
+.page-border .right-border,
+.page-border .top-border {
+  background: #f3f3ef;
+  position: fixed;
+  z-index: 9999;
+}
+
+.page-border > .top-border,
+.page-border > .right-border,
+.page-border > .bottom-border,
+.page-border > .left-border {
+  padding: 11px;
+  background: #ccc;
+}
+
+.page-border .bottom-border,
+.page-border .top-border {
+  width: 100%;
+  padding: 10px;
+  left: 0;
+}
+
+.page-border .left-border,
+.page-border .right-border {
+  padding: 10px;
+  height: 100%;
+  top: 0;
+}
+
+.page-border .top-border {
+  top: 0;
+}
+
+.page-border .right-border {
+  right: 0;
+}
+
+.page-border .bottom-border {
+  bottom: 0;
+}
+
+.page-border .left-border {
+  left: 0;
+}
+
+#wrapper {
+  margin: 0 15px;
+  padding: 15px 0;
+  position: relative;
+}
+
+/* --------- 1.1 Input Elements ---------- */
+
+input,
+textarea {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-radius: 3px;
+}
+
+input {
+  height: 40px;
+  margin: 3px 0;
+  outline: none;
+  line-height: normal;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+select {
+  border: 1px solid #e1e1e1;
+  height: 40px;
+  padding: 5px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+*:focus {
+  outline: none;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/* 2. Layout Elements */
+/*------------------------------------------------------------------------------------------*/
+
+section {
+  clear: both;
+  overflow: hidden;
+}
+
+/* Rows and Columns */
+
+.row {
+  max-width: 1245px;
+  margin: 0 auto;
+  padding: 75px 0;
+  position: relative;
+}
+
+.no-padding-bottom .row,
+.no-padding-bottom div,
+.no-padding-bottom.row {
+  padding-bottom: 0;
+}
+
+.no-padding-top.row,
+.no-padding-top div {
+  padding-top: 0;
+}
+
+.big-padding-top {
+  padding-top: 75px !important;
+}
+
+.big-padding-bottom {
+  padding-bottom: 85px !important;
+}
+
+/* Targets all elements */
+
+[class*="col-"] {
+  float: left;
+  padding: 20px;
+}
+
+#clients .col-2-3 [class*="col-"] {
+  padding: 0;
+}
+
+/* Clearfix */
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Main Widths */
+
+.col-1 {
+  width: 100%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-3 {
+  width: 33.33%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-5 {
+  width: 20%;
+}
+
+.col-6 {
+  width: 16.6666666667%;
+}
+
+.col-7 {
+  width: 14.2857142857%;
+}
+
+.col-8 {
+  width: 12.5%;
+}
+
+.col-9 {
+  width: 11.1111111111%;
+}
+
+.col-10 {
+  width: 10%;
+}
+
+.col-11 {
+  width: 9.09090909091%;
+}
+
+.col-12 {
+  width: 8.33%;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.col-3-4 {
+  width: 75%;
+}
+
+.col-9-10 {
+  width: 90%;
+}
+
+/* Golden Ratio */
+.col-61 {
+  width: 61.8%;
+}
+
+.col-38 {
+  width: 38.2%;
+}
+
+/* --------- 2.1 Header --------- */
+
+#header {
+  height: 71px !important;
+  overflow: visible;
+  z-index: 9999;
+  width: 100%;
+  position: absolute !important;
+}
+
+#header .row {
+  padding: 0;
+}
+
+#header aside {
+  text-align: right;
+}
+
+#header ul {
   text-align: center;
 }
-/* .home-description {
-  max-width: 400px;
-} */
 
+#header li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+}
+/* --------- 2.2 Logo ---------- */
+
+#logo {
+  float: left;
+  height: 71px;
+  line-height: 66px;
+  margin-right: 15px;
+}
+
+#logo h1,
+#logo h2 {
+  display: inline-block;
+}
+
+#banner #logo h1 {
+  font-size: 28px;
+  margin-right: 10px;
+  font-weight: 900;
+  padding: 0;
+}
+
+#logo h2 {
+  font-size: 18px;
+  padding: 0;
+}
+
+#logo img {
+  max-height: 22px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+#navigation-logo {
+  display: none;
+}
+
+.nav-solid #logo #banner-logo {
+  display: none;
+}
+
+.nav-solid #logo #navigation-logo {
+  display: inline-block;
+}
+/* --------- 2.3 Buttons ---------- */
+
+.call-to-action {
+  padding: 35px 0 35px 0;
+}
+
+/*Style*/
+
+.button {
+  font-size: 16px;
+  margin: 35px 0;
+  padding: 11px 16px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  display: inline-block;
+  border-width: 3px;
+  border-style: solid;
+}
+/* --------- 2.4 Navigation ---------- */
+
+#header {
+  font-size: 13px;
+}
+
+#header aside {
+  float: right;
+}
+
+#header nav ul {
+  text-transform: uppercase;
+}
+
+#header nav a {
+  height: 71px;
+  line-height: 71px;
+  display: block;
+  padding: 0 10px;
+}
+
+#header nav a:hover {
+  opacity: 0.6;
+}
+
+/*Navigation Solid*/
+
+#header.nav-solid [class*="col-"] {
+  padding: 0 20px;
+}
+
+#header.nav-solid {
+  background: #fff;
+  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.2);
+  position: fixed !important;
+  left: 0;
+}
+
+#header.nav-solid nav a {
+  border-bottom: 3px solid;
+  border-color: #fff;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#header.nav-solid nav a:hover {
+  opacity: 1;
+}
+/* Social Elements when Solid*/
+
+#header.nav-solid .social-icons a {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+}
+
+#header.nav-solid .social-icons a:hover {
+  opacity: 1;
+  color: #e4473c;
+}
+/* Responsive Nav Styling */
+
+#nav-trigger {
+  display: none;
+  text-align: right;
+}
+
+#nav-trigger span {
+  display: inline-block;
+  width: 38px;
+  height: 71px;
+  color: #111;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#nav-trigger span:after {
+  font-family: "fontAwesome";
+  display: inline-block;
+  width: 38px;
+  height: 71px;
+  line-height: 75px;
+  text-align: center;
+  content: "\f0c9";
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#nav-trigger span.open:after {
+  content: "\f00d";
+}
+
+#nav-trigger span:hover,
+.nav-solid #nav-trigger span.open:hover,
+.nav-solid #nav-trigger span:hover {
+  opacity: 0.6;
+}
+
+#nav-trigger span.open,
+#nav-trigger span.open:hover {
+  color: #111;
+}
+
+.nav-solid #nav-trigger span.open:hover {
+  color: #999;
+}
+
+.nav-solid #nav-trigger span {
+  color: #999;
+  opacity: 1;
+}
+
+nav#nav-mobile {
+  position: relative;
+  display: none;
+}
+
+nav#nav-mobile ul {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+nav#nav-mobile ul:after {
+  display: none;
+}
+
+nav#nav-mobile li {
+  margin: 0 20px;
+  float: none;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+nav#nav-mobile li:last-child {
+  border-bottom: none;
+}
+
+.nav-solid nav#nav-mobile li {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: none;
+}
+
+nav#nav-mobile a {
+  display: block;
+  padding: 12px 0;
+  color: #333;
+  width: 100%;
+  height: auto;
+  line-height: normal;
+  display: block;
+  border-bottom: none !important;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+nav#nav-mobile a:hover {
+  background: #fafafa;
+  opacity: 1;
+}
+/* --------- 2.5 Social Elements ---------- */
+
+#header .col-4 {
+  text-align: right;
+}
+
+.social-icons {
+  display: inline-block;
+  list-style: none;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+.social-icons span {
+  display: none;
+}
+
+#header .social-icons {
+  margin-top: 27px;
+}
