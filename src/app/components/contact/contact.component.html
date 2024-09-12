@@ -1,100 +1,28 @@
-<div>
-  <div>
-    <div>
-      <aside>
-        <!--Social Icons in Header-->
-        <ul class="social-icons">
-          <li>
-            <a
-              target="_blank"
-              title="Facebook"
-              href="https://www.facebook.com/username"
-            >
-              <i class="fa-brands fa-linkedin"></i><span>Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              title="Google+"
-              href="http://google.com/+username"
-            >
-              <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              title="Twitter"
-              href="http://www.twitter.com/username"
-            >
-              <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              title="Instagram"
-              href="http://www.instagram.com/username"
-            >
-              <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" title="behance" href="http://www.behance.net">
-              <i class="fa fa-behance fa-1x"></i><span>Behance</span>
-            </a>
-          </li>
-        </ul>
-        <!--End of Social Icons in Header-->
-      </aside>
-
-      <!--Main Navigation-->
-      <nav id="nav-main">
-        <ul>
-          <li>
-            <a href="#banner">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <!--End of Main Navigation-->
-
-      <div id="nav-trigger"><span></span></div>
-      <nav id="nav-mobile"></nav>
+<div
+  class="main contact-margin-top"
+  id="contact"
+  wmAnimate="jackInTheBox"
+  aos
+  speed="normal"
+>
+  <div class="contact-div-main">
+    <div class="contact-header">
+      <h1 class="heading contact-title">{{ contactInfo.title }}</h1>
+      <p class="subTitle contact-subtitle">{{ contactInfo.subtitle }}</p>
+      <div class="contact-text-div">
+        <a class="contact-detail" href="{{ 'tel:' + contactInfo.number }}">{{
+          contactInfo.number
+        }}</a>
+        <br /><br />
+        <a
+          class="contact-detail-email"
+          href="{{ 'mailto:' + contactInfo.email_address }}"
+        >
+          {{ contactInfo.email_address }}</a
+        >
+        <br /><br />
+        <!-- <app-social-media></app-social-media> -->
+      </div>
     </div>
   </div>
-</div>
-<!--End of Header-->
-
-<div id="content">
-  <h1>Contact Me</h1>
-  <p>
-    Fill up the form and hit "Send" and I'll get in touch as soon as I can. Be
-    on the lookout for my reply in your emails
-  </p>
-  <form onsubmit="handleFormSubmit(event)">
-    <label>
-      Your email:
-      <input id="email" type="email" name="email" />
-      <span class="hidden none email html-element" id="email-span"
-        >Email is Invalid</span
-      >
-    </label>
-    <label>
-      Your message:
-      <textarea id="message" name="message"></textarea>
-      <span class="hidden" id="message-span">Message is Invalid</span>
-    </label>
-    <!-- your other form fields go here -->
-    <button type="submit">Send</button>
-  </form>
 </div>
