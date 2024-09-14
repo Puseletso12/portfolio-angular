@@ -129,49 +129,6 @@ figure {
   position: relative;
 }
 
-/* --------- 1.1 Input Elements ---------- */
-
-input,
-textarea {
-  border: 1px solid #e1e1e1;
-  padding: 10px;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  border-radius: 3px;
-}
-
-input {
-  height: 40px;
-  margin: 3px 0;
-  outline: none;
-  line-height: normal;
-  font-size: 14px;
-}
-
-input[type="submit"] {
-  cursor: pointer;
-  border-style: solid;
-  border-width: 2px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-select {
-  border: 1px solid #e1e1e1;
-  height: 40px;
-  padding: 5px;
-}
-
-input:focus,
-textarea:focus {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-*:focus {
-  outline: none;
-}
-
 /*------------------------------------------------------------------------------------------*/
 /* 2. Layout Elements */
 /*------------------------------------------------------------------------------------------*/
@@ -714,6 +671,9 @@ a img:hover {
   opacity: 0.7;
 }
 
+.icon svg {
+  color: #b4b4b4;
+}
 /*------------------------------------------------------------------------------------------*/
 /* 3. Fonts */
 /*------------------------------------------------------------------------------------------*/
@@ -923,25 +883,6 @@ h6 {
 
 .features div:nth-child(4) {
   clear: both;
-}
-
-/* --------- 6.3 Testimonials ---------- */
-
-.testimonial {
-  padding: 15px;
-}
-
-blockquote {
-  position: relative;
-}
-
-.testimonial img {
-  max-height: 120px;
-  border-radius: 250em;
-}
-
-.testimonial footer {
-  padding-top: 12px;
 }
 
 /* Style Classic - Avatar above Testimonial */
@@ -2341,40 +2282,299 @@ blockquote {
   .big-padding-top {
     padding-top: 45px !important;
   }
+}
+/* header */
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 
-  /*-----------------Header Elements-----------------*/
-  #header aside {
-    display: inline-block;
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    padding-top: 3px;
-    padding-right: 5px;
+.header {
+  max-width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+.grey-color {
+  color: #868e96;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-top: 10px;
+  line-height: normal;
+}
+.header .logo-name {
+  font-family: "Agustina Regular";
+  font-weight: bold;
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  padding: 0 10px;
+  color: #55198b;
+
+  &:hover {
+    color: red;
   }
+}
 
-  #header.nav-solid aside {
-    top: 20px;
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  display: block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 370px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.subtitle {
+  color: red;
+}
+/* header */
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.header {
+  max-width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+.grey-color {
+  color: #868e96;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-top: 10px;
+  line-height: normal;
+}
+.header .logo-name {
+  font-family: "Agustina Regular";
+  font-weight: bold;
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  padding: 0 10px;
+  color: #55198b;
+
+  &:hover {
+    color: red;
   }
+}
 
-  #header aside ul {
-    margin-top: 0 !important;
-    padding-top: 6px;
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  display: block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 370px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.subtitle {
+  color: red;
+}
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
   }
-
-  /*Navigation*/
-  nav#nav-mobile ul {
-    margin-left: -40px;
-    margin-right: -40px;
-    padding-left: 20px;
-    padding-right: 20px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  /*-----------------Sections-----------------*/
-
-  /* Video */
-  .slvj-lightbox iframe,
-  .slvj-lightbox object,
-  .slvj-lightbox embed {
-    height: 432px !important;
+  .header .menu {
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  .header {
+    font-size: 12px;
   }
 }
