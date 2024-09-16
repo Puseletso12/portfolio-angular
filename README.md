@@ -20,7 +20,7 @@ Ensure that you have the following installed:
 - **Angular CLI** (v15 or higher)
 - **Git**
 
-# Link to view projects
+# Link to view project
 https://puseletso-angular-port.netlify.app/
 
 ### Setup Instructions
